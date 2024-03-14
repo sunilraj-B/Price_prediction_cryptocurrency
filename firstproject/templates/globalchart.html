@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homepage</title>
+  <style>
+    /* Customize your styles here */
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+   background-color: floralwhite;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+    }
+    .chart-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px;
+    }
+    #global-chart-link {
+      display: block;
+      margin-bottom: 20px;
+    }
+    .chart-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    
+    $(document).ready(function() {
+      $("#global-chart-link").click(function(event) {
+        event.preventDefault();
+
+        // Fetch global market data from CoinGecko API
+        $.get("https://api.coingecko.com/api/v3/global", function(data) {
+          var marketData = data.data;
+
+          // Extract market cap and volume data for the past 7 days
+          var marketCap = marketData.market_cap_percentage;
+          var volume = marketData.total_volume;
+
+          // Create chart for market cap
+          var marketCapData = {
+            labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+            datasets: [
+              {
+                label: 'Market Cap',
+                data: marketCap,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+              }
+            ]
+          };
+
+          var marketCapCtx = document.getElementById('market-cap-chart').getContext('2d');
+          new Chart(marketCapCtx, {
+            type: 'line',
+            data: marketCapData,
+            options: {
+              responsive: true,
+              scales: {
+                x: {
+                  display: false
+                },
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+
+          // Create chart for volume
+          var volumeData = {
+            labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+            datasets: [
+              {
+                label: 'Volume',
+                data: volume,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+              }
+            ]
+          };
+
+          var volumeCtx = document.getElementById('volume-chart').getContext('2d');
+          new Chart(volumeCtx, {
+            type: 'line',
+            data: volumeData,
+            options: {
+              responsive: true,
+              scales: {
+                x: {
+                  display: false
+                },
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+
+          // Create chart for time series (bar graph)
+          var timeSeriesData = {
+            labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+            datasets: [
+              {
+                label: 'Market Cap',
+                data: marketCap,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+              }
+            ]
+          };
+
+          var timeSeriesCtx = document.getElementById('time-series-chart').getContext('2d');
+          new Chart(timeSeriesCtx, {
+            type: 'bar',
+            data: timeSeriesData,
+            options: {
+              responsive: true,
+              scales: {
+                x: {
+                  display: false
+                },
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+<div class="container">
+  <h1>Welcome to My Website</h1>
+  <a href="#" id="global-chart-link">Global Chart</a>
+
+  <div class="chart-wrapper">
+    <div class="chart-container">
+      <canvas id="market-cap-chart"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="volume-chart"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="time-series-chart"></canvas>
+    </div>
+  </div>
+</div>
+</body>
+</html>

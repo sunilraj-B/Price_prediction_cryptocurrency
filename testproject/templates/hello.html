@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Price Prediction Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        .model-results {
+            margin-top: 20px;
+        }
+
+        .model-result {
+            margin-bottom: 20px;
+        }
+
+        .ensemble-results {
+            margin-top: 40px;
+        }
+
+        .future-predictions {
+            margin-top: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crypto Price Prediction Results</h1>
+
+    <div class="model-results">
+        <h2>Model Results</h2>
+        {% for model_result in model_results %}
+        <div class="model-result">
+        <h3>{{ model_result.0 }}</h3>
+        <p>Mean Absolute Error (MAE): {{ model_result.1 }}</p>
+        <p>Mean Squared Error (MSE): {{ model_result.2 }}</p>
+        <p>R-squared (R^2) Score: {{ model_result.3 }}</p>
+    </div>
+{% endfor %}
+
+    </div>
+
+    <div class="ensemble-results">
+        <h2>Ensemble Approach Results</h2>
+        <p>Mean Absolute Error (MAE): {{ mae_ensemble }}</p>
+        <p>Mean Squared Error (MSE): {{ mse_ensemble }}</p>
+        <p>R-squared (R^2) Score: {{ r2_ensemble }}</p>
+        <h3>Ensemble Approach Models</h3>
+        <ul>
+            {% for ensemble_model in ensemble_models %}
+                <li>{{ ensemble_model }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="future-predictions">
+        <h2>Future Price Predictions</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Predicted Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for date, predicted_price in future_results %}
+            <tr>
+                <td>{{ date }}</td>
+                <td>${{ predicted_price|floatformat:2 }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+    </div>
+</body>
+</html>

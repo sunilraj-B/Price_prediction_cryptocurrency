@@ -1,0 +1,400 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    /* color: white; */
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background-image: url("https://cdn.discordapp.com/attachments/822871611786657812/1125812524521107577/pngtree-colorful-light-effect-ray-background-picture-image_1219533-transformed.png"); */
+    overflow-x: hidden;
+}
+
+header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+nav > ul > li {
+    list-style-type: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: black;
+}
+
+nav > ul > li > a:hover {
+    text-decoration: none;
+    color: blue;
+    transition: ease-in-out 0.3s;
+}
+
+.hero {
+    padding: 0 3%;
+}
+
+#container {
+    padding: 3%;
+}
+
+.contact-details {
+    width: 100%;
+    padding: 0 3%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-details > p {
+    padding: 0 10px;
+} 
+
+.content-section {
+    padding: 0 3%;
+    text-align: justify;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+footer > p {
+    font-size: small;
+}
+
+#searchInput {
+    border-radius: 10px;
+    width: 100px;
+}
+
+.search-container {
+    width: 98%;
+    padding: 10px;
+    margin: 0%;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+}
+
+/*h1 {*/
+/*    text-align: center;*/
+/*    font-size: 24px;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/* #searchContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+} */
+
+#searchInput {
+    width: -webkit-fill-available;
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+/*.container {*/
+/*    flex-grow: 1;*/
+/*    max-width: 100%;*/
+/*    padding: 20px;*/
+/*    background-color: rgba(255, 255, 255, 0.8);*/
+/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+
+
+#searchResults {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /* position: absolute; */
+    z-index: 1;
+    /* background-color: #fff; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+
+#searchResults li {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#searchResults li img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+
+#searchResults li:hover {
+    background-color: #f2f2f2;
+}
+
+#selectedCurrency {
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 30%;
+}
+
+#coinInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#coinImageContainer {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+#coinImage {
+    width: 20%;
+    height: auto;
+}
+
+#infoContainer {
+    text-align: left;
+}
+
+.info-item {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.chart {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/*#leftPanel {*/
+/*    width: 300px;*/
+/*    background-color: #f5f5f5;*/
+/*    padding: 10px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+#currencyMenu {
+    list-style-type: none;
+    padding: 0;
+}
+
+#currencyMenu li {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#currencyMenu li:hover {
+    background-color: #e0e0e0;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+#selectedCurrency {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.charts-container {
+   display: flex;
+   height: fit-content;
+   min-height: 30%;
+}
+
+.chart {
+    flex-grow: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/*#container {*/
+/*    display: flex;*/
+/*    height: 100vh;*/
+/*}*/
+
+/*#leftPanel {*/
+/*    background-color: #f5f5f5;*/
+/*    padding: 10px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*#rightPanel {*/
+/*    flex-grow: 1;*/
+/*    display: flex;*/
+/*}*/
+
+
+
+#container {
+    display: flex;
+    height: 100vh;
+}
+
+/*#leftPanel {*/
+/*    background-color: #f5f5f5;*/
+/*    padding: 10px;*/
+/*    box-sizing: border-box;*/
+/*    flex-basis: 25%;*/
+/*}*/
+#leftPanel {
+    height: auto;
+    max-height: calc(100vh - 40px); /* Adjust the value based on your layout */
+    overflow-y: auto;
+}
+
+#rightPanel {
+    flex-grow: 1;
+    display: flex;
+    height: auto;
+    max-height: calc(100vh - 40px); /* Adjust the value based on your layout */
+    overflow-y: auto;
+    overflow-x: hidden
+}
+
+.container {
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.currency-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.currency-menu li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.table-header {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+.serial-number {
+    width: 50px;
+}
+
+.coin-info {
+    flex-grow: 1;
+}
+
+/*.coin-image {*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+.currency-info {
+    display: flex;
+    align-items: center;
+}
+/*.currency-menu {*/
+/*    width: 100%;*/
+/*    border-collapse: collapse;*/
+/*}*/
+
+/*.currency-menu tr {*/
+/*    border-bottom: 1px solid #ccc;*/
+/*}*/
+
+/*.table-header {*/
+/*    font-weight: bold;*/
+/*    background-color: #f5f5f5;*/
+/*}*/
+
+/*.serial-number,*/
+/*.coin-info {*/
+/*    padding: 10px;*/
+/*}*/
+
+/*.coin-image {*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+
+
+
+#currencyContainer {
+    overflow: auto;
+}
+
+.currency-menu {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header {
+    position: sticky;
+    top: 0;
+    background-color: #f5f5f5;
+}
+
+.serial-number,
+.coin-info {
+    padding: 10px;
+}
+
+.coin-image {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
